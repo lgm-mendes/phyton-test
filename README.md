@@ -1,3 +1,12 @@
-# phyton-test
+# DevOps
 
-Olá! este é um repositório *exclusivo para testes*. Pesquise mais sobre Markdown para aprender algumas coisas sobre formatação de textos para arquivos Readme como este.
+Repositório exclusivo para estudar e aprender mais sobre DevOps.
+
+- Git
+- GitHub
+- CI/CD
+- Docker
+
+## License
+
+MIT
