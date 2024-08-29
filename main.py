@@ -6,7 +6,7 @@ class Livro:
 
     def __str__(self):
         status = "Disponível" if self.disponivel else "Emprestado"
-        return f"{self.titulo} por {self.autor} ({status})"
+        return f"{self.titulo} escrito por {self.autor} ({status})"
 
 
 class Usuario:
@@ -61,3 +61,29 @@ class SistemaEmprestimo:
         print("Todos os livros no sistema:")
         for livro in self.livros:
             print(f"- {livro}")
+
+sistema = SistemaEmprestimo()
+
+livro1 = Livro("1984", "George Orwell")
+livro2 = Livro("Dom Casmurro", "Machado de Assis")
+
+sistema.adicionar_livro(livro1)
+sistema.adicionar_livro(livro2)
+
+usuario1 = Usuario("Lucas")
+usuario2 = Usuario("Wesley")
+
+sistema.adicionar_usuario(usuario1)
+sistema.adicionar_usuario(usuario2)
+
+usuario1.emprestar_livro(livro1)
+usuario2.emprestar_livro(livro2)
+
+usuario1.listar_livros_emprestados()
+usuario2.listar_livros_emprestados()
+
+usuario1.devolver_livro(livro1)
+
+sistema.listar_livros_disponiveis()
+
+sistema.listar_todos_livros()
