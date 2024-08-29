@@ -1,13 +1,23 @@
-import random
+class Livro:
+    def __init__(self, titulo, autor):
+        self.titulo = titulo
+        self.autor = autor
+        self.disponivel = True
 
-from fastapi import FastAPI
+    def __str__(self):
+        status = "Disponível" if self.disponivel else "Emprestado"
+        return f"{self.titulo} por {self.autor} ({status})"
 
-app = FastAPI()
 
-@app.get("/helloworld")
-async def root():
-    return {"message": "Hello World"}
+class Usuario:
+    def __init__(self, nome):
+        self.nome = nome
+        self.livros_emprestados = []
 
-@app.get("/funcaoteste")
-async def funcaoteste():
-    return {"test": True, "num_aleatorio": random.randint(0, 1000)}
+    def emprestar_livro(self, livro):
+        if livro.disponivel:
+            livro.disponivel = False
+            self.livros_emprestados.append(livro)
+            print(f"{self.nome} emprestou {livro.titulo}.")
+        else:
+            print(f"{livro.titulo} já está emprestado.")
