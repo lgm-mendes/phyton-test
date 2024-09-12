@@ -70,7 +70,7 @@ livro2 = Livro("Dom Casmurro", "Machado de Assis")
 sistema.adicionar_livro(livro1)
 sistema.adicionar_livro(livro2)
 
-usuario1 = Usuario("Lucas")
+usuario1 = Usuario("Matheus")
 usuario2 = Usuario("Wesley")
 
 sistema.adicionar_usuario(usuario1)
